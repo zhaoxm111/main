@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        iframe {
+            width: 1200px;
+            height: 600px;
+            background: skyblue;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>this is main</h1>
+    <!-- <button id="parent-btn">点击发送到子页面</button> -->
+    <button id="trigger">开关</button>
+    <!-- 展示收到的数据 -->
+    <ul id="say">
+
+    </ul>
+
+    <script>
+        var test = document.createElement('iframe')
+        var body=document.body;
+        body.appendChild(test);
+        var iFrame = document.getElementsByTagName('iFrame')[0];
+        iFrame.src="http://60.205.146.123/mo/agent/webapp/chat?customer=tencent";
+        iFrame.frameborder="0px";
+        iFrame.scrolling="none";
+        var parentBtn = document.getElementById('parent-btn');
+        var trigger = document.getElementById('trigger');
+        var say = document.getElementById('say');
+
+        var flag = false;
+        // 子页面传来的数据
+        var childData = {};
+
+        //监听message事件
+        window.addEventListener("message", getChildPageMsg, false);
+
+    
+
+        // 开关显示iframe页面
+        trigger.addEventListener('click', function () {
+            if (!flag) {
+                iFrame.style.display = 'block';
+                flag = !flag;
+            } else {
+                iFrame.style.display = 'none';
+                flag = !flag;
+            }
+        }, false);
+
+        // 得到子页面的数据
+        function getChildPageMsg(event) {
+            var e = event;
+            iframeData = e.data;
+            if (iframeData) {
+                console.log('child data received!', iframeData);
+            }
+            iframeClose(iframeData);
+        }
+    </script>
+</body>
+
+</html>

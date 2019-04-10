@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-on</title>
+</head>
+<body>
+    <div id="app">
+        <label>
+            男
+            <!-- 单选框 -->
+            <!-- <input v-model="sex" value="male" type="radio"> -->
+            <!-- 复选框 -->
+            <input v-model="sex" value="male" type="checkbox">
+        </label>
+        <label>
+            女
+            <!-- <input v-model="sex" value="female" type="radio"> -->
+            <input v-model="sex" value="female" type="checkbox">
+        </label>
+
+        {{sex}}</br>
+
+        <textarea v-model="article"></textarea>
+
+        <div>你来自哪里</div>
+        <!-- 下拉选框 -->
+        <select v-model="from">
+            <option value="1"> qww</option>
+            <option value="2"> tgg</option>
+        </select>
+        <div>你来自哪里</div>
+        <select v-model="dest" multiple>
+            <!-- multiple可多选 -->
+            <option value="1"> qww</option>
+            <option value="2"> tgg</option>
+            <option value="3"> qww</option>
+            <option value="4"> tgg</option>
+            <option value="5"> qww</option>
+        </select>
+        {{dest}}
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

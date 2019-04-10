@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-bind绑定数据和元素属性的</title>
+     <style>
+        .active{
+            background-color: bisque;
+        }
+     </style>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind:href="url"中间不能有空格  v-bind一般省略,只写冒号 -->
+        <a v-bind:class="{active:isactive}"v-bind:href="url">
+            <span>点我</span>
+        </a>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

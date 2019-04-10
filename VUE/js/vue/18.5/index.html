@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-on</title>
+</head>
+<body>
+    <div id="app">
+        <!-- lazy必须要等到blew才更新 -->
+        <!-- <input type="text" v-model.lazy="name"> -->
+        <!-- trim不等识别空格 -->
+        <!-- <input type="text" v-model.trim="name"> -->
+         <!-- 只对数字敏感 -->
+        <input type="text" v-model.number="price">
+        <!-- <pre>{{name}}</pre> -->
+        <pre>{{price}}</pre>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
